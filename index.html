@@ -14,13 +14,13 @@
     <form class ="form" @submit.prevent="addCard">
         <div>
             <label for="card-title">Заголовок:</label>
-            <input id="card-title" type="text" v-model="newCardTitle" required>
+            <input id="card-title" type="text" v-model="newCardTitle" :disabled="column2Length===5 && !disableCheck" required>
         </div>
         <div>
             <label for="card-items">Пункты списка (каждый пункт с новой строки):</label>
-            <textarea id="card-items" v-model="newItemText"></textarea>
+            <textarea id="card-items" v-model="newItemText" :disabled="column2Length===5 && !disableCheck"></textarea>
         </div>
-        <button class="form_button" type="submit">Добавить карточку</button>
+        <button class="form_button" type="submit" :disabled="column2Length===5 && !disableCheck">Добавить карточку</button>
     </form>
     <div class="column">
         <h2>Первый столбец</h2>

@@ -12,7 +12,7 @@ new Vue({
     },
     methods: {
         addCard() {
-            if (this.newCardTitle !== '') {
+            if (this.newCardTitle !== '' && this.column1.length < 3) {
                 const newCard = {
                     id: Date.now(),
                     title: this.newCardTitle,
@@ -49,5 +49,14 @@ new Vue({
                 card.completedDate = new Date().toLocaleString();
                 this.saveLocalStorage();
             }
-        },}
+        },
+    },
+    computed:{
+        column2Length(){
+            return this.column2.length
+        },
+        disableCheck(){
+            return this.disable
+        }
+    },
 })
