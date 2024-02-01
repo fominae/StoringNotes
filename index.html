@@ -38,24 +38,24 @@
         <h2>Второй столбец</h2>
         <div v-for="card in column2" :key="card.id" class="card">
             <h3>{{ card.title }}</h3>
-            <ul>
-                <li v-for="item in card.items" :key="item.id">
+            <div>
+                <p v-for="item in card.items" :key="item.id">
                     <input type="checkbox" v-model="item.completed" @change="handleCardPosition(card)">
                     <span :class="{ completed: item.completed }">{{ item.text }}</span>
-                </li>
-            </ul>
+                </p>
+            </div>
         </div>
     </div>
     <div class="column">
         <h2>Третий столбец</h2>
         <div v-for="card in column3" :key="card.id" class="card">
             <h3>{{ card.title }}</h3>
-            <ul>
-                <li v-for="item in card.items" :key="item.id">
+            <div>
+                <p v-for="item in card.items" :key="item.id">
                     <input type="checkbox" v-model="item.completed">
                     <span :class="{ completed: item.completed }">{{ item.text}}</span>
-                </li>
-            </ul>
+                </p>
+            </div>
             <div v-if="card.completedDate">
                 {{ card.completedDate }}
             </div>
