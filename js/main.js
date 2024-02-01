@@ -28,6 +28,7 @@ new Vue({
                 this.handleCardPosition(newCard);
                 this.newCardTitle = '';
                 this.newItemText = '';
+                this.saveLocalStorage();
             }
         },
         handleCardPosition(card) {
@@ -50,6 +51,38 @@ new Vue({
                 this.saveLocalStorage();
             }
         },
+        saveLocalStorage() {
+            const parsed = JSON.stringify(this.column1);
+            const parsed1 = JSON.stringify(this.column2);
+            const parsed2 = JSON.stringify(this.column3);
+            localStorage.setItem('column1', parsed);
+            localStorage.setItem('column2', parsed1);
+            localStorage.setItem('column3', parsed2);
+        },
+    },
+    mounted(){
+        if (localStorage.getItem('column1')) {
+            try {
+                this.column1 = JSON.parse(localStorage.getItem('column1'));
+            } catch(e) {
+                localStorage.removeItem('column1');
+            }
+        }
+        if (localStorage.getItem('column2')) {
+            try {
+                this.column2 = JSON.parse(localStorage.getItem('column2'));
+            } catch(e) {
+                localStorage.removeItem('column2');
+            }
+        }
+        if (localStorage.getItem('column3')) {
+            try {
+                this.column3 = JSON.parse(localStorage.getItem('column3'));
+            } catch(e) {
+                localStorage.removeItem('column3');
+            }
+        }
+
     },
     computed:{
         column2Length(){
