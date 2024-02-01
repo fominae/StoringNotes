@@ -1,0 +1,56 @@
+body{
+    font-family: Century;
+    color: #3d473e;
+}
+.column {
+    border: #787878 1px solid;
+    border-radius: 5px;
+    width: 33.33%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.card {
+    background: #e6ffec;
+    border: 1px solid #58ad78;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.completed {
+    background-color: lightgreen;
+}
+
+.form{
+    margin: 0 auto;
+    width: 400px;
+    background: #e6ffec;
+    border: 1px solid #58ad78;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.form_button{
+    width: 100px;
+    border: 1px solid #58ad78;
+    border-radius: 15px;
+}
+#card-items{
+    border: 1px solid #58ad78;
+    resize: none;
+    width: 400px;
+    height: 90px;
+    border-radius: 15px;
+
+}
+#card-title{
+    border: 1px solid #58ad78;
+    border-radius: 15px;
+}
+
+h2{
+    text-align: center;
+}
