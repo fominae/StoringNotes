@@ -55,6 +55,7 @@
                     <input type="checkbox" v-model="item.completed">
                     <span :class="{ completed: item.completed }">{{ item.text}}</span>
                 </p>
+                <button class="remove_button" @click="removeCard(card)">Удалить карточку</button>
             </div>
             <div v-if="card.completedDate">
                 {{ card.completedDate }}

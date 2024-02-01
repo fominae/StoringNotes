@@ -59,6 +59,10 @@ new Vue({
             localStorage.setItem('column2', parsed1);
             localStorage.setItem('column3', parsed2);
         },
+        removeCard(card) {
+            this.column3.splice(this.column3.indexOf(card), 1);
+            this.saveLocalStorage();
+        },
     },
     mounted(){
         if (localStorage.getItem('column1')) {

@@ -54,3 +54,9 @@ body{
 h2{
     text-align: center;
 }
+
+.remove_button{
+    width: 100px;
+    border: 1px solid #58ad78;
+    border-radius: 15px;
+}
