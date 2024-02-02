@@ -17,9 +17,6 @@ body{
     padding: 10px;
     margin-bottom: 10px;
 }
-.completed {
-    background-color: lightgreen;
-}
 
 .form{
     margin: 0 auto;
