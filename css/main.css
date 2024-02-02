@@ -20,7 +20,7 @@ body{
 
 .form{
     margin: 0 auto;
-    width: 400px;
+    width: 250px;
     background: #e6ffec;
     border: 1px solid #58ad78;
     border-radius: 25px;
@@ -28,12 +28,17 @@ body{
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
 
 }
-.form_button{
-    width: 100px;
+.form-botton{
+    position: relative;
+    top: 5px;
+    width: 150px;
     border: 1px solid #58ad78;
-    border-radius: 15px;
+    border-radius: 150px;
+
 }
 #card-items{
     border: 1px solid #58ad78;
@@ -44,6 +49,10 @@ body{
 
 }
 #card-title{
+    border: 1px solid #58ad78;
+    border-radius: 15px;
+}
+.text{
     border: 1px solid #58ad78;
     border-radius: 15px;
 }

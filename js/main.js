@@ -16,20 +16,27 @@ new Vue({
                 const newCard = {
                     id: Date.now(),
                     title: this.newCardTitle,
-                    items: this.newItemText.split('\n').filter(item => item.trim() !== '').map(item => ({ text: item, completed: false }))
+                    items: [
+                        { text: '', completed: false },
+                        { text: '', completed: false },
+                        { text: '', completed: false }
+                    ],
                 };
-                if (this.newCardTitle !== '' && newCard.items.length >= 3 && newCard.items.length <= 5) {
+                if (this.newCardTitle !== '' ) {
                     this.column1.push(newCard);
                 }
-                else alert("Количество пунктов должно быть от 3-х до 5-и!!!")
-                {
 
-                }
                 this.handleCardPosition(newCard);
                 this.newCardTitle = '';
                 this.newItemText = '';
                 this.saveLocalStorage();
+
             }
+        },
+        addItem(card){
+            if(this.newItemText != '' && card.items.length <= 4){
+                card.items.push({id: Date.now(), text: this.newItemText, checked: false})
+                this.newItemText = '';}
         },
         handleCardPosition(card) {
             const totalItems = card.items.length;

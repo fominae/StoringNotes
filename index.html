@@ -11,27 +11,24 @@
 
 <body>
 <div id="app">
-    <form class ="form" @submit.prevent="addCard">
-        <div>
-            <label for="card-title">Заголовок:</label>
-            <input id="card-title" type="text" v-model="newCardTitle" :disabled="column2Length===5 && !disableCheck" required>
-        </div>
-        <div>
-            <label for="card-items">Пункты списка (каждый пункт с новой строки):</label>
-            <textarea id="card-items" v-model="newItemText" :disabled="column2Length===5 && !disableCheck"></textarea>
-        </div>
-        <button class="form_button" type="submit" :disabled="column2Length===5 && !disableCheck">Добавить карточку</button>
+    <form class="form" @submit.prevent="addCard">
+        <label for="card-title">Заголовок:</label>
+        <input id="card-title" type="text" v-model="newCardTitle":disabled="column2Length===5 && !disableCheck">
+        <button class="form-botton" type="submit":disabled="column2Length===5 && !disableCheck">Добавить карточку</button>
     </form>
     <div class="column">
         <h2>Первый столбец</h2>
         <div v-for="card in column1" :key="card.id" class="card">
             <h3>{{ card.title }}</h3>
-            <div>
-                <p v-for="item in card.items" :key="item.id">
-                    <input type="checkbox" v-model="item.completed"@change="handleCardPosition(card)" :disabled="column2Length===5 && !disableCheck">
-                    <span :class="{ completed: item.completed }">{{ item.text }}</span>
-                </p>
+            <div v-for="item in card.items" :key="item.id" id="check">
+                <input class="text"  type="text" v-model="item.text" required >
+                <input type="checkbox" v-model="item.completed"@change="handleCardPosition(card)":disabled="column2Length===5 && !disableCheck || item.text === ''"   >
+                <label  :class="{ completed: item.completed }" ></label>
             </div>
+            <form class="Form1" @submit.prevent="addItem(card)">
+                <input class="text" type="text"  v-model="newItemText">
+                <button class="form-botton" type="submit":disabled="column2Length===5 && !disableCheck">Добавить Пункт</button>
+            </form>
         </div>
     </div>
     <div class="column">
